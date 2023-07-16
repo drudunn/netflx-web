@@ -7,6 +7,7 @@ import TailwindIndicator from "@/components/tailwind-indicator"
 import ToastWrapper from "@/components/ui/toast-wrapper"
 import "@/styles/globals.css"
 import { Analytics } from "@vercel/analytics/react"
+import { Splash } from "@/components/splash"
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -80,17 +81,6 @@ export const metadata = {
 }
 
 const holding = true
-
-const Splash = () => {
-  return (
-    <main className="flex h-screen">
-      <div className="m-auto">
-        <img src="/dunnflix.svg" />
-        <h1 className="text-center"><span className="sr-only">Dunnflix </span>coming soon</h1>
-      </div>
-    </main>
-  )
-}
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
