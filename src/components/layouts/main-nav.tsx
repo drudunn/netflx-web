@@ -38,8 +38,8 @@ export function MainNav({ items }: MainNavProps) {
         }}
       >
         <Image
-          src="/netflix-logo.svg"
-          alt="netflix"
+          src="/dunnflix.svg"
+          alt="dunnflix"
           width={1024}
           height={276.74}
           className="h-auto w-28 object-cover transition-opacity hover:opacity-80 active:opacity-100"

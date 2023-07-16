@@ -39,6 +39,10 @@ export const metadata = {
       name: "sadmann7",
       url: "https://github.com/sadmann7",
     },
+    {
+      name: "drudunn",
+      url: "https://github.com/drudunn",
+    },
   ],
   creator: "sadmann7",
   themeColor: [
@@ -66,7 +70,7 @@ export const metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [`${siteConfig.url}/api/og.tsx`],
-    creator: "@sadmann17",
+    creator: "@drudunn",
   },
   icons: {
     icon: "/favicon.ico",

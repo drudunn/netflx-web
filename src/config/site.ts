@@ -3,16 +3,14 @@ import type { SiteConfig } from "@/types"
 
 import { Icons } from "@/components/icons"
 
+const domain = "https://dunndunn.wedding"
+
 export const siteConfig: SiteConfig = {
-  name: "Netflix Web",
+  name: "Dunnflix",
   description:
-    "An open source Netflix clone built using the new app router, server components, trpc, and everything new in Next.js 13.",
-  url: "https://netflx-web.vercel.app",
-  ogImage: "https://netflx-web.vercel.app/opengraph-image.png",
-  links: {
-    twitter: "https://twitter.com/sadmann17",
-    github: "https://github.com/sadmann7",
-  },
+    "Dunn-Dunn, the wedding of Andru & Christina.",
+  url: domain,
+  ogImage: `${domain}/opengraph-image.png`,
   mainNav: [
     {
       title: "Home",
@@ -20,22 +18,22 @@ export const siteConfig: SiteConfig = {
       icon: Icons.home,
     },
     {
-      title: "TV Shows",
+      title: "Schedule",
       href: "/tv-shows",
       icon: Icons.tvShow,
     },
     {
-      title: "Movies",
+      title: "Venue",
       href: "/movies",
       icon: Icons.movie,
     },
     {
-      title: "New & Popular",
+      title: "Gifts",
       href: "/new-and-popular",
       icon: Icons.trendingUp,
     },
     {
-      title: "My List",
+      title: "My RSVP",
       href: "/my-list",
       icon: Icons.list,
     },
@@ -67,12 +65,12 @@ export const siteConfig: SiteConfig = {
       icon: Icons.help,
     },
     {
-      title: "Sign Out of Netflix",
+      title: "Sign Out of Dunnflix",
     },
   ],
   footerItems: [
     { title: "Audio Description", href: "/" },
-    { title: "Help Center", href: "/" },
+    { title: "Help Center", href: "/help-center" },
     { title: "Gift Cards", href: "/" },
     { title: "Media Center", href: "/" },
     { title: "Investor Relations", href: "/" },
@@ -87,22 +85,22 @@ export const siteConfig: SiteConfig = {
   socialLinks: [
     {
       title: "Facebook",
-      href: "https://www.facebook.com/NetflixAsia",
+      href: "https://www.instagram.com/drudunn",
       icon: Icons.facebook,
     },
     {
       title: "Instagram",
-      href: "https://www.instagram.com/netflixasia/",
+      href: "https://www.instagram.com/christina_lucy_/",
       icon: Icons.instagram,
     },
     {
       title: "Twitter",
-      href: "https://twitter.com/NetflixAsia",
+      href: "https://dunn.wtf",
       icon: Icons.twitter,
     },
     {
       title: "Youtube",
-      href: "https://www.youtube.com/channel/UCZoC-XeDO7HxbAdeCaRPPCw/videos",
+      href: "https://www.mankellow.com",
       icon: Icons.youtube,
     },
   ],
