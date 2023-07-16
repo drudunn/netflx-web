@@ -37,10 +37,6 @@ export const metadata = {
   ],
   authors: [
     {
-      name: "sadmann7",
-      url: "https://github.com/sadmann7",
-    },
-    {
       name: "drudunn",
       url: "https://github.com/drudunn",
     },
