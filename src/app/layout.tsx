@@ -79,6 +79,19 @@ export const metadata = {
   },
 }
 
+const holding = true
+
+const Splash = () => {
+  return (
+    <main className="flex h-screen">
+      <div className="m-auto">
+        <img src="/dunnflix.svg" />
+        <h1 className="text-center"><span className="sr-only">Dunnflix </span>coming soon</h1>
+      </div>
+    </main>
+  )
+}
+
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <TRPCProvider>
@@ -91,7 +104,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         <head />
         <body className="min-h-screen">
-          {children}
+          {holding ? <Splash /> : children}
           <ToastWrapper />
           <TailwindIndicator />
           <Analytics />
