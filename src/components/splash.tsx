@@ -8,7 +8,6 @@ export const Splash = () => {
     src: '/dunndunn.mp3',
     autoPlay: false,
   });
-  console.log(state)
 
   return (
     <main className="flex h-screen">

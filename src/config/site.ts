@@ -82,6 +82,10 @@ export const siteConfig: SiteConfig = {
     { title: "Corporate Information", href: "/" },
     { title: "Contact Us", href: "/" },
   ],
+  links: {
+    twitter: "https://www.twitter.com/drudunn",
+    github: "https://www.github.com/drudunn",
+  },
   socialLinks: [
     {
       title: "Facebook",
