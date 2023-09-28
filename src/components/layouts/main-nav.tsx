@@ -16,6 +16,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { useUser } from '@clerk/nextjs';
 
 interface MainNavProps {
   items?: NavItem[]
@@ -23,6 +24,10 @@ interface MainNavProps {
 
 export function MainNav({ items }: MainNavProps) {
   const path = usePathname()
+  const { isSignedIn, user, isLoaded } = useUser();
+  const hasUser = user && isSignedIn && isLoaded;
+
+  const links = hasUser ? items : [{ title: "Home", href: "/"}]
 
   // search store
   const searchStore = useSearchStore()
@@ -46,9 +51,9 @@ export function MainNav({ items }: MainNavProps) {
           priority
         />
       </Link>
-      {items?.length ? (
+      {links?.length ? (
         <nav className="hidden gap-6 lg:flex">
-          {items?.map(
+          {links?.map(
             (item, index) =>
               item.href && (
                 <Link
@@ -100,7 +105,7 @@ export function MainNav({ items }: MainNavProps) {
             </Link>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
-          {items?.map((item, index) =>
+          {links?.map((item, index) =>
             item.href ? (
               <DropdownMenuItem
                 key={index}

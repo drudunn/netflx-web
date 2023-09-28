@@ -1,0 +1,11 @@
+.card {
+    margin: 0;
+}
+
+.card>:last-child {
+    display: none;
+}
+
+.logo {
+    display: none;
+}

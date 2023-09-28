@@ -50,7 +50,7 @@ const SiteFooter = () => {
           className="h-auto w-fit rounded-none py-1.5 text-sm text-neutral-400 dark:text-neutral-400"
         />
         <p className="text-xs sm:text-sm">
-          @ 2023-{new Date().getFullYear()} Netflx.
+          @ 2023-2024 Dunnflix.
         </p>
       </div>
     </footer>

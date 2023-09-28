@@ -1,17 +1,17 @@
-import { Inter as FontSans } from "next/font/google"
-import TRPCProvider from "@/context/trpc-provider"
+import { Inter as FontSans } from 'next/font/google'
+import TRPCProvider from '@/context/trpc-provider'
+import { ClerkProvider } from '@clerk/nextjs'
 
-import { siteConfig } from "@/config/site"
-import { absoluteUrl, cn } from "@/lib/utils"
-import TailwindIndicator from "@/components/tailwind-indicator"
-import ToastWrapper from "@/components/ui/toast-wrapper"
-import "@/styles/globals.css"
-import { Analytics } from "@vercel/analytics/react"
-import { Splash } from "@/components/splash"
+import { siteConfig } from '@/config/site'
+import { absoluteUrl, cn } from '@/lib/utils'
+import TailwindIndicator from '@/components/tailwind-indicator'
+import ToastWrapper from '@/components/ui/toast-wrapper'
+import '@/styles/globals.css'
+import { Analytics } from '@vercel/analytics/react'
 
 const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-inter",
+  subsets: ['latin'],
+  variable: '--font-inter',
 })
 
 interface RootLayoutProps {
@@ -25,37 +25,29 @@ export const metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    "Next.js",
-    "React",
-    "Tailwind CSS",
-    "Server Components",
-    "TRPC",
-    "T3-App",
-    "Netflix",
-    "Netflix OTT",
-    "Netflix Clone",
+    'Wedding',
   ],
   authors: [
     {
-      name: "drudunn",
-      url: "https://github.com/drudunn",
+      name: 'drudunn',
+      url: 'https://github.com/drudunn',
     },
   ],
-  creator: "sadmann7",
+  creator: 'sadmann7',
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
   openGraph: {
-    type: "website",
-    locale: "en_US",
+    type: 'website',
+    locale: 'en_US',
     url: siteConfig.url,
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
     images: [
       {
-        url: absoluteUrl("/src/pages/api/og.tsx"),
+        url: absoluteUrl('/src/pages/api/og.tsx'),
         width: 1200,
         height: 630,
         alt: siteConfig.name,
@@ -63,20 +55,18 @@ export const metadata = {
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: 'summary_large_image',
     title: siteConfig.name,
     description: siteConfig.description,
     images: [`${siteConfig.url}/api/og.tsx`],
-    creator: "@drudunn",
+    creator: '@drudunn',
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
 }
-
-const holding = true
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
@@ -84,17 +74,19 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <html
         lang="en"
         className={cn(
-          "scroll-smooth bg-neutral-900 font-sans text-slate-50 antialiased",
+          'scroll-smooth bg-neutral-900 font-sans text-slate-50 antialiased',
           fontSans.variable
         )}
       >
-        <head />
+      <head/>
+      <ClerkProvider>
         <body className="min-h-screen">
-          {holding ? <Splash /> : children}
-          <ToastWrapper />
-          <TailwindIndicator />
-          <Analytics />
+        {children}
+        <ToastWrapper/>
+        <TailwindIndicator/>
+        <Analytics/>
         </body>
+      </ClerkProvider>
       </html>
     </TRPCProvider>
   )

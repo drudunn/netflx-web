@@ -27,6 +27,11 @@ const server = z.object({
   STRIPE_BASIC_PRICE_ID: z.string(),
   STRIPE_STANDARD_PRICE_ID: z.string(),
   STRIPE_PREMIUM_PRICE_ID: z.string(),
+  KV_REST_API_READ_ONLY_TOKEN: z.string(),
+  KV_REST_API_TOKEN: z.string(),
+  KV_REST_API_URL: z.string(),
+  KV_URL: z.string(),
+  CLERK_SECRET_KEY: z.string(),
 })
 
 /**
@@ -36,6 +41,11 @@ const server = z.object({
 const client = z.object({
   NEXT_PUBLIC_APP_URL: z.string().url(),
   NEXT_PUBLIC_TMDB_API_KEY: z.string(),
+  NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z.string(),
+  NEXT_PUBLIC_CLERK_SIGN_IN_URL: z.string(),
+  NEXT_PUBLIC_CLERK_SIGN_UP_URL: z.string(),
+  NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL: z.string(),
+  NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL: z.string(),
 })
 
 /**
@@ -59,6 +69,16 @@ const processEnv = {
   STRIPE_BASIC_PRICE_ID: process.env.STRIPE_BASIC_PRICE_ID,
   STRIPE_STANDARD_PRICE_ID: process.env.STRIPE_STANDARD_PRICE_ID,
   STRIPE_PREMIUM_PRICE_ID: process.env.STRIPE_PREMIUM_PRICE_ID,
+  KV_REST_API_READ_ONLY_TOKEN: process.env.KV_REST_API_READ_ONLY_TOKEN,
+  KV_REST_API_TOKEN: process.env.KV_REST_API_TOKEN,
+  KV_REST_API_URL: process.env.KV_REST_API_URL,
+  KV_URL: process.env.KV_URL,
+  CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY,
+  NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,
+  NEXT_PUBLIC_CLERK_SIGN_IN_URL: process.env.NEXT_PUBLIC_CLERK_SIGN_IN_URL,
+  NEXT_PUBLIC_CLERK_SIGN_UP_URL: process.env.NEXT_PUBLIC_CLERK_SIGN_UP_URL,
+  NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL: process.env.NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL,
+  NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL: process.env.NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL,
 }
 
 // Don't touch the part below
@@ -84,7 +104,8 @@ if (!!process.env.SKIP_ENV_VALIDATION == false) {
   if (parsed.success === false) {
     console.error(
       "❌ Invalid environment variables:",
-      parsed.error.flatten().fieldErrors
+      parsed.error.flatten().fieldErrors,
+        // {NEXTAUTH_URL: process.env.NEXTAUTH_URL, env: process.env.NODE_ENV}
     )
     throw new Error("Invalid environment variables")
   }

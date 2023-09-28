@@ -27,6 +27,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Skeleton } from "@/components/ui/skeleton"
+import { useUser } from '@clerk/nextjs';
 
 interface SiteHeaderProps {
   session: Session | null
@@ -37,6 +38,8 @@ const SiteHeader = ({ session }: SiteHeaderProps) => {
   const path = usePathname()
   const mounted = useMounted()
   const [isScrolled, setIsScrolled] = React.useState(false)
+
+  const { isSignedIn, user, isLoaded } = useUser();
 
   // change background color on scroll
   React.useEffect(() => {
@@ -109,7 +112,7 @@ const SiteHeader = ({ session }: SiteHeaderProps) => {
             <Skeleton className="aspect-square h-7 bg-neutral-700" />
           )}
           {mounted ? (
-            session ? (
+            user ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
