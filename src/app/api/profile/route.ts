@@ -5,14 +5,22 @@ export async function POST(request: Request) {
   const userId = request.headers.get('userId')
 
   const formData = await request.formData()
+  console.log({ formData })
+  const attending = formData.get('attending')
+  const guests = formData.get('guests')
+  const note = formData.get('note')
   const dietary = formData.get('dietary')
-  const email = formData.get('email')
+  const song = formData.get('song')
 
-  if (email) {
+  if (userId) {
 
-    await clerkClient.users.updateUserMetadata(userId as string, {
+    await clerkClient.users.updateUserMetadata(userId , {
       publicMetadata: {
-        dietary
+        attending,
+        guests,
+        note,
+        dietary,
+        song
       }
     })
     return NextResponse.json({ success: true, dietary });
