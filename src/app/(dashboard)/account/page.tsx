@@ -21,7 +21,7 @@ type PublicProfile = {
 }
 interface FormOptions { label: string, value: string | string[] }
 
-const profileConfig: { [key in PublicProfile]: FormOptions } = {
+const profileConfig: { [key: keyof PublicProfile]: FormOptions } = {
   attending: { label: 'Attending', value: ['Yes', 'No'] },
   guests: { label: 'Guests', value: '' },
   note: { label: 'Guest notes (optional)', value: '' },
@@ -66,6 +66,7 @@ export default function AccountPage() {
       {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
       <form onSubmit={onSubmit} className={'flex flex-col'}>
         {Object.keys(profileConfig).map((key) => {
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           const { label, value }: { label: string, value: string | string[]} = profileConfig?.[key]
 
           const isString = typeof value === 'string'
