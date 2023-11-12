@@ -61,12 +61,12 @@ export default function AccountPage() {
       {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
       <form onSubmit={onSubmit} className={'flex flex-col'}>
         {Object.keys(profileConfig).map((key) => {
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          const { label, value }: { label: string, value: string | string[]} = profileConfig?.[key]
+          const { label, value }: { label: string, value: string | string[]} = profileConfig?.[key as PublicProfile]
 
           const isString = typeof value === 'string'
-          const defaultValue = publicMetadata?.[key]
+          const defaultValue = publicMetadata?.[key] as string
           console.log({ key, label, value, defaultValue })
+
           return (
             <Fragment key={label}>
               {isString && (
@@ -89,7 +89,6 @@ export default function AccountPage() {
                   {value.map((option) => (
                     <label
                       key={option}
-                      name={key}
                       className={`flex items-center mb-6 mr-8`}
                     >
                       <input
