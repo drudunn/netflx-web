@@ -32,6 +32,7 @@
     "@vercel/analytics": "^1.0.1",
     "@vercel/kv": "^0.2.2",
     "@vercel/og": "^0.5.3",
+    "@vercel/postgres": "^0.5.1",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
     "csstype": "^3.1.2",
