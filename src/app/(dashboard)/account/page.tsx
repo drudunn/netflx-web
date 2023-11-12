@@ -21,7 +21,7 @@ type PublicProfile = {
 }
 interface FormOptions { label: string, value: string | string[] }
 
-const profileConfig: { [key: keyof PublicProfile]: FormOptions } = {
+const profileConfig: { [key in PublicProfile]: FormOptions } = {
   attending: { label: 'Attending', value: ['Yes', 'No'] },
   guests: { label: 'Guests', value: '' },
   note: { label: 'Guest notes (optional)', value: '' },
