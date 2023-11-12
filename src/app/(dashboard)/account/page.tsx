@@ -12,16 +12,11 @@ import { getPlanDetails, getUserSubscriptionPlan } from "@/lib/subscription"
 import AccountForm from "@/components/forms/account-form"
 import { useUser } from '@clerk/nextjs';
 
-type PublicProfile = {
-  attending: string
-  guests: string
-  note: string
-  dietary: string
-  song: string
-}
+type PublicProfile = 'attending' |  'guests' |  'note' |  'dietary' |  'song'
+
 interface FormOptions { label: string, value: string | string[] }
 
-const profileConfig: { [key: keyof PublicProfile]: FormOptions } = {
+const profileConfig: Record<PublicProfile, FormOptions> = {
   attending: { label: 'Attending', value: ['Yes', 'No'] },
   guests: { label: 'Guests', value: '' },
   note: { label: 'Guest notes (optional)', value: '' },
