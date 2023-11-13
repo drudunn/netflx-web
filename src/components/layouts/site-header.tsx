@@ -96,7 +96,7 @@ const SiteHeader = ({ session }: SiteHeaderProps) => {
             <Button
               aria-label="Notifications"
               variant="ghost"
-              className="hidden h-auto rounded-full p-1 hover:bg-transparent dark:hover:bg-transparent lg:flex"
+              className="h-auto rounded-full p-1 hover:bg-transparent dark:hover:bg-transparent lg:flex"
               onClick={() =>
                 toast.success("Do a kickflip", {
                   icon: "🛹",
@@ -120,10 +120,10 @@ const SiteHeader = ({ session }: SiteHeaderProps) => {
                     variant="ghost"
                     className="h-auto shrink-0 px-2 py-1.5 text-base hover:bg-transparent focus:ring-0 hover:dark:bg-neutral-800 [&[data-state=open]>svg]:rotate-180"
                   >
-                    {profileStore.profile?.icon ? (
+                    {!profileStore.profile?.icon ? (
                       <Image
-                        src={profileStore.profile.icon.href}
-                        alt={profileStore.profile.icon.title}
+                        src={`/images/netflix-profile-blue.jpg`}
+                        alt={''}
                         width={28}
                         height={28}
                         className="rounded-sm object-cover transition-opacity hover:opacity-80"

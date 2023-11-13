@@ -33,11 +33,6 @@ export const siteConfig: SiteConfig = {
       icon: Icons.trendingUp,
     },
     {
-      title: "My RSVP",
-      href: "/my-list",
-      icon: Icons.list,
-    },
-    {
       title: "Notifications",
       onClick: () => alert("🛹 Do a kickflip"),
       icon: Icons.bell,
@@ -46,13 +41,8 @@ export const siteConfig: SiteConfig = {
   profileDropdownItems: [
     {
       title: "Manage Profiles",
-      href: "/profiles",
+      href: "/account",
       icon: Icons.edit,
-    },
-    {
-      title: "Exit Profile",
-      icon: Icons.externalLink,
-      onClick: () => useProfileStore.setState({ profile: null }),
     },
     {
       title: "Account",
@@ -65,7 +55,11 @@ export const siteConfig: SiteConfig = {
       icon: Icons.help,
     },
     {
-      title: "Sign Out of Dunnflix",
+      title: "Sign Out",
+      icon: Icons.externalLink,
+
+      // eslint-disable-next-line @typescript-eslint/no-misused-promises,@typescript-eslint/no-unsafe-return,@typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
+      onClick: async () => await (window as any).Clerk.signOut(),
     },
   ],
   footerItems: [
