@@ -184,7 +184,7 @@ const SiteHeader = ({ session }: SiteHeaderProps) => {
                   ))}
                   {siteConfig.profileDropdownItems.map(
                     (item, index) =>
-                      item.title !== "Sign Out of Netflix" &&
+                      item.title !== "Sign Out" &&
                       (item.href ? (
                         <DropdownMenuItem
                           key={index}
@@ -222,7 +222,7 @@ const SiteHeader = ({ session }: SiteHeaderProps) => {
                   <DropdownMenuSeparator />
                   {siteConfig.profileDropdownItems.map(
                     (item, index) =>
-                      item.title === "Sign Out of Netflix" && (
+                      item.title === "Sign Out" && (
                         <DropdownMenuItem
                           key={index}
                           asChild
@@ -230,7 +230,7 @@ const SiteHeader = ({ session }: SiteHeaderProps) => {
                         >
                           <span
                             className="line-clamp-1 grid place-items-center"
-                            onClick={() => void signOut()}
+                            onClick={item.onClick}
                           >
                             {item.title}
                           </span>
