@@ -4,7 +4,7 @@ import type { Metadata } from "next"
 import { redirect } from "next/navigation"
 import { authOptions } from "@/server/auth"
 import { prisma } from "@/server/db"
-import { FormEvent, Fragment } from 'react'
+import { FormEvent, Fragment, useEffect, useState } from 'react'
 
 import { getCurrentUser } from "@/lib/session"
 import { stripe } from "@/lib/stripe"
@@ -28,8 +28,11 @@ export default function AccountPage() {
   const { user } = useUser();
   const { id, publicMetadata, firstName } = user || {};
 
+  const [submitting, setSubmitting] = useState(false)
+
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    setSubmitting(true)
 
     const formData = new FormData(event.currentTarget)
     console.log({ formData, id })
@@ -47,7 +50,14 @@ export default function AccountPage() {
     const data = await response.json()
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     console.log({ data })
+    setSubmitting(false)
   }
+  const hash = publicMetadata && Object.values(publicMetadata).length
+
+  useEffect(() => {
+    console.log({ publicMetadata, user, hash })
+  }, [publicMetadata, user])
+
 
   return (
     <div className={`container flex flex-col max-w-screen-lg justify-between space-x-4 sm:space-x-0 pt-8 pb-24`}>
@@ -59,7 +69,7 @@ export default function AccountPage() {
 
       <H2>Profile</H2>
       {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
-      <form onSubmit={onSubmit} className={'flex flex-col'}>
+      <form onSubmit={onSubmit} className={'flex flex-col'} key={hash}>
         {Object.keys(profileConfig).map((key) => {
           const { label, value }: { label: string, value: string | string[]} = profileConfig?.[key as PublicProfile]
 
@@ -77,7 +87,8 @@ export default function AccountPage() {
                     type={'text'}
                     name={key}
                     defaultValue={defaultValue}
-                    className={'p-2 rounded mb-6'}
+                    disabled={submitting}
+                    className={'p-2 rounded mb-6 text-slate-800'}
                     style={{ color: '#333!important' }}
                   />
                 </>
@@ -96,6 +107,7 @@ export default function AccountPage() {
                         type={'radio'}
                         name={key}
                         className={`mr-2`}
+                        disabled={submitting}
                         defaultChecked={defaultValue === option}
                       />
                       {option}
@@ -106,7 +118,9 @@ export default function AccountPage() {
             </Fragment>
           )
         })}
-        <button type="submit">Submit</button>
+        <button type="submit" disabled={submitting}>
+          {submitting ? 'Updating' : 'Save'}
+        </button>
       </form>
     </div>
   )
