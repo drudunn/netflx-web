@@ -48,7 +48,7 @@ import {
   X,
   Youtube,
   type Icon as LucideIcon,
-  type LucideProps, Menu,
+  type LucideProps, Menu, Maximize, Maximize2,
 } from 'lucide-react'
 
 export type Icon = LucideIcon
@@ -75,6 +75,7 @@ export const Icons = {
   arrowLeft: ArrowLeft,
   arrowRight: ArrowRight,
   externalLink: ExternalLink,
+  fullScreen: Maximize2,
   help: HelpCircle,
   pizza: Pizza,
   bell: Bell,

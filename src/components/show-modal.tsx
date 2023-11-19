@@ -21,6 +21,7 @@ import {
   DialogDescription,
   DialogTitle,
 } from "@/components/ui/dialog"
+import screenfull from 'screenfull';
 
 interface ShowModalProps {
   open: boolean
@@ -40,6 +41,16 @@ const ShowModal = ({ open, setOpen }: ShowModalProps) => {
   const [isMuted, setIsMuted] = React.useState(false)
   const [isPlaying, setIsPlaying] = React.useState(false)
   const [isAdded, setIsAdded] = React.useState(false)
+
+  const player = React.useRef(null);
+
+  const handleClickFullscreen = () => {
+    if (screenfull.isEnabled) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+      screenfull.request(player.current.wrapper)
+        .catch(err => console.log(err));
+    }
+  };
 
   // get trailer and genres of show
   React.useEffect(() => {
@@ -156,6 +167,7 @@ const ShowModal = ({ open, setOpen }: ShowModalProps) => {
             url={`https://www.youtube.com/watch?v=${trailer}`}
             width="100%"
             height="100%"
+            ref={player}
             muted={isMuted}
             playing={isPlaying}
             controls={false}
@@ -252,18 +264,25 @@ const ShowModal = ({ open, setOpen }: ShowModalProps) => {
                 </Button>
               </DynamicTooltip>
             </div>
-            <Button
-              aria-label={`${isMuted ? "Unmute" : "Mute"} video`}
-              variant="ghost"
-              className="h-auto rounded-full bg-neutral-800 p-1.5 opacity-50 ring-1 ring-slate-400 hover:bg-neutral-800 hover:opacity-100 hover:ring-white focus:ring-offset-0 dark:bg-neutral-800 dark:hover:bg-neutral-800"
-              onClick={() => setIsMuted(!isMuted)}
-            >
-              {isMuted ? (
-                <Icons.volumneMute className="h-6 w-6" aria-hidden="true" />
-              ) : (
-                <Icons.volumne className="h-6 w-6" aria-hidden="true" />
-              )}
-            </Button>
+            <div className="flex items-center gap-2.5">
+              <Button
+                aria-label={`${isMuted ? "Unmute" : "Mute"} video`}
+                variant="ghost"
+                className="h-auto rounded-full bg-neutral-800 p-1.5 opacity-50 ring-1 ring-slate-400 hover:bg-neutral-800 hover:opacity-100 hover:ring-white focus:ring-offset-0 dark:bg-neutral-800 dark:hover:bg-neutral-800"
+                onClick={() => setIsMuted(!isMuted)}
+              >
+                {isMuted ? (
+                  <Icons.volumneMute className="h-6 w-6" aria-hidden="true" />
+                ) : (
+                  <Icons.volumne className="h-6 w-6" aria-hidden="true" />
+                )}
+              </Button>
+              <Button onClick={handleClickFullscreen}
+                      variant="ghost"
+                      className="h-auto rounded-full bg-neutral-800 p-1.5 opacity-50 ring-1 ring-slate-400 hover:bg-neutral-800 hover:opacity-100 hover:ring-white focus:ring-offset-0 dark:bg-neutral-800 dark:hover:bg-neutral-800">
+                <Icons.fullScreen className="h-6 w-6" aria-hidden="true" />
+              </Button>
+          </div>
           </div>
         </div>
         <div className="grid gap-2.5 px-10 pb-10">
