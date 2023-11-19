@@ -45,9 +45,9 @@ const ShowModal = ({ open, setOpen }: ShowModalProps) => {
   const player = React.useRef(null);
 
   const handleClickFullscreen = () => {
-    if (screenfull.isEnabled) {
+    if (screenfull.isEnabled && player?.current?.['wrapper']) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-      screenfull.request(player.current.wrapper)
+      screenfull.request(player.current?.['wrapper'])
         .catch(err => console.log(err));
     }
   };
