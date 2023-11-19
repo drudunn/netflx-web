@@ -2,15 +2,21 @@ import { useProfileStore } from "@/stores/profile"
 import type { SiteConfig } from "@/types"
 
 import { Icons } from "@/components/icons"
+import { absoluteUrl } from '@/lib/utils';
 
 const domain = "https://dunndunn.wedding"
 
-export const siteConfig: SiteConfig = {
+const config = {
   name: "Dunnflix",
   description:
-    "Dunn-Dunn, the wedding of Andru & Christina.",
+    "Dunn-Dunn, the wedding of Andru and Christina.",
+}
+
+export const siteConfig: SiteConfig = {
+  name: config.name,
+  description: config.description,
   url: domain,
-  ogImage: `${domain}/opengraph-image.png`,
+  ogImage: absoluteUrl(`/api/og?title=${config.name}&description=${config.description}`),
   mainNav: [
     {
       title: "Home",
