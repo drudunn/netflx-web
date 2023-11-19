@@ -6,7 +6,7 @@ const brooklyn99 = {
   "name": "Brooklyn Nine-Nine",
   "original_language": "en",
   "original_name": "Brooklyn Nine-Nine",
-  "overview": "A single-camera ensemble comedy following the lives of an eclectic group of detectives in a New York precinct, including one slacker who is forced to shape up when he gets a new boss.",
+  "overview": "Andru wishes he was Jake Peralta, Christina is more like Amy Santiago than she likes to admit.",
   "poster_path": "/hgRMSOt7a1b8qyQR68vUixJPang.jpg",
   "media_type": "tv",
   "genre_ids": [
@@ -29,7 +29,7 @@ const theOffice = {
   "name": "The Office",
   "original_language": "en",
   "original_name": "The Office",
-  "overview": "The everyday lives of office employees in the Scranton, Pennsylvania branch of the fictional Dunder Mifflin Paper Company.",
+  "overview": "The comfort food of television for Andru & Christina. We've watched all nine series' at least 5 times.",
   "poster_path": "/7DJKHzAi83BmQrWLrYYOqcoKfhR.jpg",
   "media_type": "tv",
   "genre_ids": [
@@ -51,7 +51,7 @@ const parksAndRec = {
   "name": "Parks and Recreation",
   "original_language": "en",
   "original_name": "Parks and Recreation",
-  "overview": "Hilarious ensemble comedy that follows Leslie Knope, a mid-level bureaucrat in the Parks and Recreation Department of Pawnee, Indiana, and her tireless efforts to make her quintessentially American town just a little bit more fun.",
+  "overview": "Christina is Leslie Knope, Andru is Ron Swanson. We're both a little April Ludgate.",
   "poster_path": "/dDuzrl9rUIBYieZjqmtNCdncrmZ.jpg",
   "media_type": "tv",
   "genre_ids": [
@@ -73,7 +73,7 @@ const tedLasso = {
   "name": "Ted Lasso",
   "original_language": "en",
   "original_name": "Ted Lasso",
-  "overview": "Ted Lasso, an American football coach, moves to England when he’s hired to manage a soccer team—despite having no experience. With cynical players and a doubtful town, will he get them to see the Ted Lasso Way?",
+  "overview": "What's better than a whole TV show based on where Andru & Christina live?",
   "poster_path": "/5fhZdwP1DVJ0FyVH6vrFdHwpXIn.jpg",
   "media_type": "tv",
   "genre_ids": [
@@ -96,7 +96,7 @@ const jurasicPark = {
   "title": "Jurassic Park",
   "original_language": "en",
   "original_title": "Jurassic Park",
-  "overview": "A wealthy entrepreneur secretly creates a theme park featuring living dinosaurs drawn from prehistoric DNA. Before opening day, he invites a team of experts and his two eager grandchildren to experience the park and help calm anxious investors. However, the park is anything but amusing as the security systems go off-line and the dinosaurs escape.",
+  "overview": "Christina's all time favourite film. Andru is as old as a dinosaur.",
   "poster_path": "/oU7Oq2kFAAlGqbU4VoAE36g4hoI.jpg",
   "media_type": "movie",
   "genre_ids": [
@@ -117,7 +117,7 @@ const onlyMurders = {
   "name": "Only Murders in the Building",
   "original_language": "en",
   "original_name": "Only Murders in the Building",
-  "overview": "Three strangers share an obsession with true crime and suddenly find themselves wrapped up in one.",
+  "overview": "A new-ish series that Andru & Christina enjoy. We long to live in a building like the Arconia in NYC.",
   "poster_path": "/yhx6PnU3L2a6FnEFGOlBKTZ8TSD.jpg",
   "media_type": "tv",
   "genre_ids": [
@@ -141,7 +141,7 @@ const schittsCreek = {
   "name": "Schitt's Creek",
   "original_language": "en",
   "original_name": "Schitt's Creek",
-  "overview": "Formerly filthy rich video store magnate Johnny Rose, his soap star wife Moira, and their two kids, über-hipster son David and socialite daughter Alexis, suddenly find themselves broke and forced to live in Schitt's Creek, a small depressing town they once bought as a joke.",
+  "overview": "Easily our favourite show of the last few years. The engagement episode is very much like Andru & Christina's own wild hiking story. 💍",
   "poster_path": "/iRfSzrPS5VYWQv7KVSEg2BZZL6C.jpg",
   "media_type": "tv",
   "genre_ids": [
@@ -163,7 +163,7 @@ const theBear = {
   "name": "The Bear",
   "original_language": "en",
   "original_name": "The Bear",
-  "overview": "Carmy, a young fine-dining chef, comes home to Chicago to run his family sandwich shop. As he fights to transform the shop and himself, he works alongside a rough-around-the-edges crew that ultimately reveal themselves as his chosen family.",
+  "overview": "It's probably bad how much Andru & Christina enjoy how stressful this show is right? It's shot impeccably and the story is so good.",
   "poster_path": "/3MVHF64rlvH1eofKefIoazXwOK0.jpg",
   "media_type": "tv",
   "genre_ids": [
@@ -186,7 +186,7 @@ const trying = {
   "name": "Trying",
   "original_language": "en",
   "original_name": "Trying",
-  "overview": "All Nikki and Jason want is a baby—the one thing they can’t have. So they decide to adopt. With their dysfunctional friends, screwball families, and chaotic lives, will the adoption panel agree that they’re ready to be parents?",
+  "overview": "Nikki and Jason are basically Andru & Christina. We enjoyed feeling like we were back in London watching this show in Sydney.",
   "poster_path": "/cRMpyWmKinhFQe83iTIk828INuE.jpg",
   "media_type": "tv",
   "genre_ids": [
@@ -208,7 +208,7 @@ const alwaysSunny = {
   "name": "It's Always Sunny in Philadelphia",
   "original_language": "en",
   "original_name": "It's Always Sunny in Philadelphia",
-  "overview": "Four egocentric friends run a neighborhood Irish pub in Philadelphia and try to find their way through the adult world of work and relationships. Unfortunately, their warped views and precarious judgments often lead them to trouble, creating a myriad of uncomfortable situations that usually only get worse before they get better.",
+  "overview": "This show is so hectic, but Andru & Christina had to have it on their list, as they've watched the whole series this year.",
   "poster_path": "/pRWO6ufqSNkWvPXDDQhBwPNSv4K.jpg",
   "media_type": "tv",
   "genre_ids": [
@@ -230,7 +230,7 @@ const mando = {
   "name": "The Mandalorian",
   "original_language": "en",
   "original_name": "The Mandalorian",
-  "overview": "After the fall of the Galactic Empire, lawlessness has spread throughout the galaxy. A lone gunfighter makes his way through the outer reaches, earning his keep as a bounty hunter.",
+  "overview": "Christina is baby Yoda. Andru is the Mandalorian. This show was shot so well, we can't wait for season 3.",
   "poster_path": "/eU1i6eHXlzMOlEq0ku1Rzq7Y4wA.jpg",
   "media_type": "tv",
   "genre_ids": [
@@ -254,7 +254,7 @@ const nemo = {
   "title": "Finding Nemo",
   "original_language": "en",
   "original_title": "Finding Nemo",
-  "overview": "Nemo, an adventurous young clownfish, is unexpectedly taken from his Great Barrier Reef home to a dentist's office aquarium. It's up to his worrisome father Marlin and a friendly but forgetful fish Dory to bring Nemo home -- meeting vegetarian sharks, surfer dude turtles, hypnotic jellyfish, hungry seagulls, and more along the way.",
+  "overview": `"Today's the day, the sun is shining, the tank is clean... THE TANK IS CLEAN!?" — Christina and her sisters love this film, Andru also likes it but can't remember quotes as well as those nerds.`,
   "poster_path": "/ggQ6o8X5984OCh3kZi2UIJQJY5y.jpg",
   "media_type": "movie",
   "genre_ids": [
