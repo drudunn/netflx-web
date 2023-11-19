@@ -30,7 +30,7 @@ import { Skeleton } from "@/components/ui/skeleton"
 import { useUser } from '@clerk/nextjs';
 
 interface SiteHeaderProps {
-  session: Session | null
+  session?: Session | null
 }
 
 const SiteHeader = ({ session }: SiteHeaderProps) => {

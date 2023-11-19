@@ -6,6 +6,11 @@ interface AccountLayoutProps {
   children: React.ReactNode
 }
 
+export const metadata = {
+  title: "RSVP",
+  description: "Complete your wedding profile",
+}
+
 export default async function AccountLayout({ children }: AccountLayoutProps) {
   const session = await getSession()
 
