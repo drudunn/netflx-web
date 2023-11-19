@@ -58,13 +58,10 @@ export default function AccountPage() {
 
   return (
     <div className={`container flex flex-col max-w-screen-lg justify-between space-y-4 pt-8 pb-24`}>
-      <h1>RSVP</h1>
+      <h1 className={`text-2xl font-semibold text-white/90 transition-colors hover:text-white`}>RSVP</h1>
+      <hr />
 
       <p className={`text-3xl font-bold md:text-4xl`}>Hi {firstName}</p>
-
-      <hr className={`my-4 mb-12`} />
-
-      <H2>Wedding Profile</H2>
       {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
       <form onSubmit={onSubmit} className={'flex flex-col'} key={hash}>
         {Object.keys(profileConfig).map((key) => {
