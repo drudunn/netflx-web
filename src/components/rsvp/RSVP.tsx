@@ -9,7 +9,7 @@ export const RSVP = () => {
   const hash = publicMetadata && Object.values(publicMetadata).length
 
   const { rsvp: rsvpContext } = useContext(RSVPContext)
-  const rsvp = rsvpContext || publicMetadata?.['attending']
+  const rsvp = (rsvpContext || publicMetadata?.['attending'] || '') as string
 
   useEffect(() => {
     console.log('header', { publicMetadata, user, hash, rsvp, 'rsvpContext': rsvpContext })
@@ -19,7 +19,7 @@ export const RSVP = () => {
   const nope = rsvp === 'No'
   const awaiting = !rsvp
 
-  const Text = ({ text, small }: { text: string, small: boolean }) => (
+  const Text = ({ text, small }: { text: string, small?: boolean }) => (
     <p
       className={`flex items-center text-sm font-medium text-slate-300 transition hover:text-slate-300 hover:text-opacity-70 dark:text-slate-300 dark:hover:text-slate-300 dark:hover:text-opacity-70 sm:text-sm ${small ? 'text-xs' : ''}`}>{text}</p>
   );
