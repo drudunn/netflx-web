@@ -4,9 +4,12 @@
  */
 !process.env.SKIP_ENV_VALIDATION && (await import("./src/env.mjs"))
 
+import withMDX from '@next/mdx'
+
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
+  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   images: {
     // image optimization is disabled because of exceeding the vercel hobby tier limit
     unoptimized: true,
@@ -30,4 +33,4 @@ const config = {
   //   defaultLocale: "en",
   // },
 }
-export default config
+export default withMDX()(config)

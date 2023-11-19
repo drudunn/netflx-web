@@ -82,7 +82,7 @@ const SiteHeader = ({ session }: SiteHeaderProps) => {
           {mounted ? (
             <DebouncedInput
               containerClassName={cn(
-                path === "/login" || path === "/login/plans" ? "hidden" : "flex"
+                path === "/login" || path === "/login/plans" ? "hidden" : "flex max-sm:hidden"
               )}
               setQuery={searchStore.setQuery}
               setData={searchStore.setShows}
@@ -96,7 +96,7 @@ const SiteHeader = ({ session }: SiteHeaderProps) => {
             <Button
               aria-label="Notifications"
               variant="ghost"
-              className="h-auto rounded-full p-1 hover:bg-transparent dark:hover:bg-transparent lg:flex"
+              className="h-auto rounded-full p-1 hover:bg-transparent dark:hover:bg-transparent lg:flex max-xs:hidden"
               onClick={() =>
                 toast.success("Do a kickflip", {
                   icon: "🛹",

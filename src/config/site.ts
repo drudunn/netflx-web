@@ -50,7 +50,7 @@ export const siteConfig: SiteConfig = {
   ],
   profileDropdownItems: [
     {
-      title: "Manage Profiles",
+      title: "RSVP",
       href: "/account",
       icon: Icons.edit,
     },
@@ -61,7 +61,7 @@ export const siteConfig: SiteConfig = {
     },
     {
       title: "Help Center",
-      href: "/help-center",
+      href: "/faqs",
       icon: Icons.help,
     },
     {
