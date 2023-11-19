@@ -17,7 +17,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { useUser } from '@clerk/nextjs';
-import { RSVP } from '@/app/(dashboard)/account/page';
+import { RSVP } from '@/components/rsvp/RSVP';
 
 interface MainNavProps {
   items?: NavItem[]
