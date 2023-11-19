@@ -57,7 +57,7 @@ export default function AccountPage() {
   }, [publicMetadata, user, hash, rsvp])
 
   return (
-    <div className={`container flex flex-col max-w-screen-lg justify-between space-x-4 sm:space-x-0 pt-8 pb-24`}>
+    <div className={`container flex flex-col max-w-screen-lg justify-between space-y-4 pt-8 pb-24`}>
       <h1>RSVP</h1>
 
       <p className={`text-3xl font-bold md:text-4xl`}>Hi {firstName}</p>

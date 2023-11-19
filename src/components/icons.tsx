@@ -48,8 +48,8 @@ import {
   X,
   Youtube,
   type Icon as LucideIcon,
-  type LucideProps,
-} from "lucide-react"
+  type LucideProps, Menu,
+} from 'lucide-react'
 
 export type Icon = LucideIcon
 
@@ -98,6 +98,7 @@ export const Icons = {
   movie: Film,
   trendingUp: TrendingUp,
   list: List,
+  menu: Menu,
   facebook: Facebook,
   instagram: Instagram,
   twitter: Twitter,

@@ -80,8 +80,8 @@ export function MainNav({ items }: MainNavProps) {
             variant="ghost"
             className="h-auto px-2 py-1.5 text-base hover:bg-neutral-800 focus:ring-0 dark:hover:bg-neutral-800 lg:hidden"
           >
-            <Icons.logo className="mr-2 h-4 text-red-600" />
-            <Icons.list />
+            <Icons.menu className="mr-2 h-4 text-red-100" />
+            <Icons.logo className="h-4 text-red-600" />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent

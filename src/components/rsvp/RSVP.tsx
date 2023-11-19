@@ -24,7 +24,7 @@ export const RSVP = () => {
       className={`flex items-center text-sm font-medium text-slate-300 transition hover:text-slate-300 hover:text-opacity-70 dark:text-slate-300 dark:hover:text-slate-300 dark:hover:text-opacity-70 sm:text-sm ${small ? 'text-xs' : ''}`}>{text}</p>
   );
 
-  const iconClass = 'h-4 mt-2.5 lg:mt-1.5 text-red-600'
+  const iconClass = 'h-4 mt-1.5 text-red-600'
 
 
   return (

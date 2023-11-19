@@ -73,7 +73,7 @@ const tedLasso = {
   "name": "Ted Lasso",
   "original_language": "en",
   "original_name": "Ted Lasso",
-  "overview": "What's better than a whole TV show based on where Andru & Christina live?",
+  "overview": "What is better than an entire TV show based on where Andru & Christina live?",
   "poster_path": "/5fhZdwP1DVJ0FyVH6vrFdHwpXIn.jpg",
   "media_type": "tv",
   "genre_ids": [
@@ -141,7 +141,7 @@ const schittsCreek = {
   "name": "Schitt's Creek",
   "original_language": "en",
   "original_name": "Schitt's Creek",
-  "overview": "Easily our favourite show of the last few years. The engagement episode is very much like Andru & Christina's own wild hiking story. 💍",
+  "overview": "Easily our favourite show of the last few years. The engagement episode is very much like Andru & Christina's own wild hiking story 💍",
   "poster_path": "/iRfSzrPS5VYWQv7KVSEg2BZZL6C.jpg",
   "media_type": "tv",
   "genre_ids": [
@@ -208,7 +208,7 @@ const alwaysSunny = {
   "name": "It's Always Sunny in Philadelphia",
   "original_language": "en",
   "original_name": "It's Always Sunny in Philadelphia",
-  "overview": "This show is so hectic, but Andru & Christina had to have it on their list, as they've watched the whole series this year.",
+  "overview": "This show is so hectic, but Andru & Christina had to have it on this list, as they've watched the whole series this year.",
   "poster_path": "/pRWO6ufqSNkWvPXDDQhBwPNSv4K.jpg",
   "media_type": "tv",
   "genre_ids": [
@@ -276,9 +276,9 @@ export const ourShows = [
   parksAndRec,
   tedLasso,
   jurasicPark,
+  mando,
   onlyMurders,
   trying,
   alwaysSunny,
-  mando,
   nemo
 ]
