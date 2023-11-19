@@ -8,6 +8,7 @@ import TailwindIndicator from '@/components/tailwind-indicator'
 import ToastWrapper from '@/components/ui/toast-wrapper'
 import '@/styles/globals.css'
 import { Analytics } from '@vercel/analytics/react'
+import { RSVP } from '@/components/RSVPContext';
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -80,12 +81,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
       <head/>
       <ClerkProvider>
+        <RSVP>
         <body className="min-h-screen">
         {children}
         <ToastWrapper/>
         <TailwindIndicator/>
         <Analytics/>
         </body>
+        </RSVP>
       </ClerkProvider>
       </html>
     </TRPCProvider>

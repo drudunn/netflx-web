@@ -57,7 +57,7 @@ const Hero = ({ shows }: HeroProps) => {
             </h1>
             <div className="flex space-x-2 text-xs font-semibold md:text-sm">
               <p className="text-green-600">
-                {randomShow?.vote_average * 10 ?? "-"}% Match
+                {(randomShow?.vote_average * 10)?.toFixed(0) ?? "-"}% Match
               </p>
               <p className="text-gray-300">{randomShow?.release_date ?? "-"}</p>
             </div>

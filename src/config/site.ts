@@ -18,18 +18,28 @@ export const siteConfig: SiteConfig = {
       icon: Icons.home,
     },
     {
+      title: "RSVP",
+      href: "/account",
+      icon: Icons.check,
+    },
+    {
       title: "Schedule",
-      href: "/tv-shows",
+      href: "/schedule",
       icon: Icons.tvShow,
     },
     {
       title: "Venue",
-      href: "/movies",
-      icon: Icons.movie,
+      href: "/venue",
+      icon: Icons.pizza,
+    },
+    {
+      title: "FAQs",
+      href: "/faqs",
+      icon: Icons.info,
     },
     {
       title: "Gifts",
-      href: "/new-and-popular",
+      href: "/gifts",
       icon: Icons.trendingUp,
     },
     {

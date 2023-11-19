@@ -1,16 +1,10 @@
 "use client"
 
-import type { Metadata } from "next"
-import { redirect } from "next/navigation"
-import { authOptions } from "@/server/auth"
-import { prisma } from "@/server/db"
-import { FormEvent, Fragment, useEffect, useState } from 'react'
+import { FormEvent, Fragment, useContext, useEffect, useState } from 'react'
 
-import { getCurrentUser } from "@/lib/session"
-import { stripe } from "@/lib/stripe"
-import { getPlanDetails, getUserSubscriptionPlan } from "@/lib/subscription"
-import AccountForm from "@/components/forms/account-form"
 import { useUser } from '@clerk/nextjs';
+import { Icons } from '@/components/icons';
+import { RSVPContext } from '@/components/RSVPContext';
 
 type PublicProfile = 'attending' |  'guests' |  'note' |  'dietary' |  'song'
 
@@ -24,9 +18,58 @@ const profileConfig: Record<PublicProfile, FormOptions> = {
   song: { label: 'Song recommendation', value: '' },
 }
 
+export const RSVP = () => {
+  const { user } = useUser();
+  const { id, publicMetadata, firstName } = user || {};
+  const hash = publicMetadata && Object.values(publicMetadata).length
+
+  const { rsvp: rsvpContext } = useContext(RSVPContext)
+  const rsvp = rsvpContext || publicMetadata?.['attending']
+
+  useEffect(() => {
+    console.log('header',{ publicMetadata, user, hash, rsvp, 'rsvpContext': rsvpContext })
+  }, [publicMetadata, user, hash, rsvp, rsvpContext])
+
+  const attending = rsvp === 'Yes'
+  const nope = rsvp === 'No'
+  const awaiting = !rsvp
+
+  const Text = ({ text, small }: { text: string, small: boolean }) => (
+    <p className={`flex items-center text-sm font-medium text-slate-300 transition hover:text-slate-300 hover:text-opacity-70 dark:text-slate-300 dark:hover:text-slate-300 dark:hover:text-opacity-70 sm:text-sm ${small ? 'text-xs' : ''}`}>{text}</p>
+  );
+
+  const iconClass = 'h-4 mt-2.5 lg:mt-1.5 text-red-600'
+
+
+  return (
+    <a href={'/account'} className={'flex space-x-2 align-middle lg:ml-8'} key={rsvp}>
+      {attending && (
+        <>
+          <Icons.check className={iconClass} />
+          <Text text={'Attending'} />
+        </>
+      )}
+      {nope && (
+        <>
+          <Icons.warning className={iconClass} />
+          <Text text={`Busy`} small />
+        </>
+      )}
+      {awaiting && (
+        <>
+          <Icons.help className={iconClass} />
+          <Text text={'RSVP'} />
+        </>
+      )}
+    </a>
+  )
+}
+
 export default function AccountPage() {
   const { user } = useUser();
   const { id, publicMetadata, firstName } = user || {};
+
+  const { rsvp, setRSVP } = useContext(RSVPContext)
 
   const [submitting, setSubmitting] = useState(false)
 
@@ -48,26 +91,28 @@ export default function AccountPage() {
     // Handle response if necessary
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const data = await response.json()
+    const attending = formData.get('attending') || ''
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    console.log({ data })
+    console.log({ data, attending })
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    setRSVP(attending)
     setSubmitting(false)
   }
   const hash = publicMetadata && Object.values(publicMetadata).length
 
   useEffect(() => {
-    console.log({ publicMetadata, user, hash })
-  }, [publicMetadata, user])
-
+    console.log('account',{ publicMetadata, user, hash, rsvp })
+  }, [publicMetadata, user, hash, rsvp])
 
   return (
     <div className={`container flex flex-col max-w-screen-lg justify-between space-x-4 sm:space-x-0 pt-8 pb-24`}>
-      <h1>Account</h1>
+      <h1>RSVP</h1>
 
       <p className={`text-3xl font-bold md:text-4xl`}>Hi {firstName}</p>
 
-      <hr className={`my-4`} />
+      <hr className={`my-4 mb-12`} />
 
-      <H2>Profile</H2>
+      <H2>Wedding Profile</H2>
       {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
       <form onSubmit={onSubmit} className={'flex flex-col'} key={hash}>
         {Object.keys(profileConfig).map((key) => {

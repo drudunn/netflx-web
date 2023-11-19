@@ -17,6 +17,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { useUser } from '@clerk/nextjs';
+import { RSVP } from '@/app/(dashboard)/account/page';
 
 interface MainNavProps {
   items?: NavItem[]
@@ -79,8 +80,8 @@ export function MainNav({ items }: MainNavProps) {
             variant="ghost"
             className="h-auto px-2 py-1.5 text-base hover:bg-neutral-800 focus:ring-0 dark:hover:bg-neutral-800 lg:hidden"
           >
-            <Icons.logo className="mr-2 h-4 w-4 text-red-600" />
-            <span className="font-bold">Menu</span>
+            <Icons.logo className="mr-2 h-4 text-red-600" />
+            <Icons.list />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent
@@ -97,7 +98,7 @@ export function MainNav({ items }: MainNavProps) {
                 searchStore.setShows([])
               }}
             >
-              <Icons.logo
+              <Icons.lockup
                 className="mr-2 h-4 w-4 text-red-600"
                 aria-hidden="true"
               />
@@ -142,6 +143,7 @@ export function MainNav({ items }: MainNavProps) {
           )}
         </DropdownMenuContent>
       </DropdownMenu>
+      <RSVP />
     </div>
   )
 }
