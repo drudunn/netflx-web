@@ -282,3 +282,150 @@ export const ourShows = [
   alwaysSunny,
   nemo
 ]
+
+
+
+const severance = {
+  "adult": false,
+  "backdrop_path": "/npD65vPa4vvn1ZHpp3o05A5vdKT.jpg",
+  "id": 95396,
+  "name": "Severance",
+  "original_language": "en",
+  "original_name": "Severance",
+  "overview": "Mark leads a team of office workers whose memories have been surgically divided between their work and personal lives. When a mysterious colleague appears outside of work, it begins a journey to discover the truth about their jobs.",
+  "poster_path": "/lFf6LLrQjYldcZItzOkGmMMigP7.jpg",
+  "media_type": "tv",
+  "genre_ids": [
+    18,
+    9648,
+    10765
+  ],
+  "popularity": 94.255,
+  "first_air_date": "2022-02-17",
+  "vote_average": 8.384,
+  "vote_count": 878,
+  "origin_country": [
+    "US"
+  ]
+}
+
+const you = {
+  "adult": false,
+  "backdrop_path": "/2ZNFu0hkSVtAI6LRWGIlCPNd1Tj.jpg",
+  "id": 78191,
+  "name": "You",
+  "original_language": "en",
+  "original_name": "You",
+  "overview": "A dangerously charming, intensely obsessive young man goes to extreme measures to insert himself into the lives of those he is transfixed by.",
+  "poster_path": "/7bEYwjUvlJW7GerM8GYmqwl4oS3.jpg",
+  "media_type": "tv",
+  "genre_ids": [
+    18
+  ],
+  "popularity": 126.691,
+  "first_air_date": "2018-09-09",
+  "vote_average": 8.07,
+  "vote_count": 2833,
+  "origin_country": [
+    "US"
+  ]
+}
+
+const explained = {
+  "adult": false,
+  "backdrop_path": "/uGL51pEZZPaxickbjWjsQaXDXWq.jpg",
+  "id": 79746,
+  "name": "Explained",
+  "original_language": "en",
+  "original_name": "Explained",
+  "overview": "This documentary series, made in partnership with Vox, explain some of the world's current trends, from politics, to science to pop culture.",
+  "poster_path": "/4iiV2Fh4EA5of5B9Wtgllu0WDWA.jpg",
+  "media_type": "tv",
+  "genre_ids": [
+    99
+  ],
+  "popularity": 81.943,
+  "first_air_date": "2018-05-23",
+  "vote_average": 7.473,
+  "vote_count": 94,
+  "origin_country": [
+    "US"
+  ]
+}
+
+const beef = {
+  "adult": false,
+  "backdrop_path": "/u7OpeS4eckBSR1wFxFTuyy3FjHE.jpg",
+  "id": 154385,
+  "name": "BEEF",
+  "original_language": "en",
+  "original_name": "BEEF",
+  "overview": "A road rage incident between two strangers — a failing contractor and an unfulfilled entrepreneur — sparks a feud that brings out their darkest impulses.",
+  "poster_path": "/a9vYy3EGbwLhOpGhPKpnX7F33Bm.jpg",
+  "media_type": "tv",
+  "genre_ids": [
+    35,
+    18
+  ],
+  "popularity": 52.51,
+  "first_air_date": "2023-04-06",
+  "vote_average": 7.806,
+  "vote_count": 366,
+  "origin_country": [
+    "US"
+  ]
+}
+
+const workinMoms = {
+  "adult": false,
+  "backdrop_path": "/r6KryquXDJoPdildIuJgK2TvWhi.jpg",
+  "id": 69555,
+  "name": "Workin' Moms",
+  "original_language": "en",
+  "original_name": "Workin' Moms",
+  "overview": "Four women juggle love, careers, and parenthood. They support, challenge, and try not to judge each other as life throws them curveballs. Whether it is an identity crisis, a huge job opportunity, postpartum depression, or an unplanned pregnancy – they face both the good and bad with grace and humour.",
+  "poster_path": "/1TJkVKx7IeLadTFxOpUN3QEGI7Z.jpg",
+  "media_type": "tv",
+  "genre_ids": [
+    35
+  ],
+  "popularity": 116.152,
+  "first_air_date": "2017-01-10",
+  "vote_average": 7.541,
+  "vote_count": 74,
+  "origin_country": [
+    "CA"
+  ]
+}
+
+const gg = {
+  "adult": false,
+  "backdrop_path": "/5RWAjCYhu3D8Ai2QBYP7GjaxFb3.jpg",
+  "id": 1395,
+  "name": "Gossip Girl",
+  "original_language": "en",
+  "original_name": "Gossip Girl",
+  "overview": "An exclusive group of privileged teens from a posh prep school on Manhattan's Upper East Side whose lives revolve around the blog of the all-knowing albeit ultra-secretive Gossip Girl.",
+  "poster_path": "/hvDlmhoImfX5oUYS2gXxsMrpSTB.jpg",
+  "media_type": "tv",
+  "genre_ids": [
+    18,
+    9648
+  ],
+  "popularity": 231.13,
+  "first_air_date": "2007-09-19",
+  "vote_average": 8.29,
+  "vote_count": 1881,
+  "origin_country": [
+    "US"
+  ]
+}
+
+export const trendingShows = [
+  severance,
+  you,
+  beef,
+  workinMoms,
+  gg,
+  explained,
+]

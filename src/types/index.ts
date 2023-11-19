@@ -94,6 +94,8 @@ export type Show = {
   video: boolean
   vote_average: number
   vote_count: number
+  yt?: string
+  overrideImg?: string
 }
 
 export type ShowWithGenreAndVideo = Show & {

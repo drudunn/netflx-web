@@ -42,7 +42,7 @@ const Hero = ({ shows }: HeroProps) => {
               )}
             />
             <Image
-              src={`https://image.tmdb.org/t/p/original/${
+              src={randomShow.overrideImg ? randomShow.overrideImg : `https://image.tmdb.org/t/p/original/${
                 randomShow?.poster_path ?? randomShow?.backdrop_path ?? ""
               }`}
               alt={randomShow?.title ?? "poster"}

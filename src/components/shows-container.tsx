@@ -43,7 +43,7 @@ const ShowsContainer = ({ user, shows }: ShowsContainerProps) => {
 
   return (
     <div
-      className={cn("w-full space-y-5 sm:space-y-10", path === "/" && "pt-16")}
+      className={cn("w-full space-y-5 sm:space-y-10", path === "/" && "pt-24")}
     >
       {modalStore.open ? (
         <ShowModal open={modalStore.open} setOpen={modalStore.setOpen} />

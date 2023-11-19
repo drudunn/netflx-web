@@ -4,7 +4,8 @@ import { getShows } from '@/lib/fetchers'
 import { getCurrentUser } from '@/lib/session'
 import Hero from '@/components/hero'
 import ShowsContainer from '@/components/shows-container'
-import { ourShows } from '@/app/(shows)/shows';
+import { ourShows, trendingShows } from '@/app/(shows)/shows';
+import { highlights } from '@/app/(shows)/travel';
 import { cn } from '@/lib/utils';
 import { Link } from '@/components/ui/link';
 import * as React from 'react';
@@ -16,7 +17,7 @@ export default async function Home() {
   const favorites = shows.slice(0, 6)
   const topPicks = shows.slice(6)
 
-  const allShows = await getShows('movie')
+  const allShows = [...shows, ...highlights] as unknown as Show[]
 
   const allShowsByCategory: CategorizedShows[] = [
     {
@@ -24,26 +25,26 @@ export default async function Home() {
       shows: favorites,
     },
     {
-      title: `Andru & Christina's Top Picks`,
-      shows: topPicks,
-    }
+      title: 'Andru & Christina\'s Travel Highlights',
+      shows: highlights as unknown as Show[],
+    },
   ]
 
   const customShowsByCategory: CategorizedShows[] = [
     {
-      title: 'Travel Highlights',
-      shows: allShows.docs,
+      title: `Andru & Christina's Top Picks`,
+      shows: topPicks,
     },
     {
-      title: "The Ultimate Best Man",
-      shows: allShows.comedy,
+      title: "Dunnflix Trending Now",
+      shows: trendingShows as unknown as Show[],
     },
   ]
 
   return (
     <section>
       <div className="pb-16 pt-10">
-        <Hero shows={shows ?? []}/>
+        <Hero shows={allShows ?? []}/>
         <ShowsContainer user={user} shows={allShowsByCategory}/>
         <div className={cn("w-full space-y-5 sm:space-y-10 pt-16")}>
           <div className="container w-full max-w-screen-2xl space-y-1 sm:space-y-2.5">

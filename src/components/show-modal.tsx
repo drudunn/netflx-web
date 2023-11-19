@@ -46,6 +46,11 @@ const ShowModal = ({ open, setOpen }: ShowModalProps) => {
     const getShow = async () => {
       if (!modalStore.show) return
 
+      if (modalStore.show.yt) {
+        setTrailer(modalStore.show.yt)
+        return
+      }
+
       try {
         const response = await fetch(
           `https://api.themoviedb.org/3/${

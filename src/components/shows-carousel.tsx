@@ -93,7 +93,7 @@ export default ShowsCarousel
 const ShowCard = ({ show }: { show: Show }) => {
   return (
     <Image
-      src={`https://image.tmdb.org/t/p/w500/${
+      src={show.overrideImg ? show.overrideImg : `https://image.tmdb.org/t/p/w500/${
         show.backdrop_path ?? show.poster_path ?? ""
       }`}
       alt={show.title ?? show.name ?? "poster"}
