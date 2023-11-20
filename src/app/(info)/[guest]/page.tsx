@@ -34,12 +34,13 @@ const index: Record<Guest, guestInfo> = {
     guests: 'Lee, Helen, Harrison & Amelia',
     numRooms: 'two',
     numGuests: 'four',
-    barn: 'The Barnhouse'
+    barn: 'The Barnhouse',
+    roomSize: 'double rooms'
   },
   'fay': {
     guests: 'Fay, Olivia & Ellie',
     numGuests: 'three',
-    roomSize: 'triple'
+    roomSize: 'triple room'
   },
   'chip': {
     guests: 'Beth & Nick',
@@ -89,16 +90,17 @@ const Strong = ({children}: { children: React.ReactNode}) => (
 
 const Accomm = ({ guests, numRooms = 'one', numGuests = 'two', barn = 'The Farmhouse', roomSize = 'double room' }: guestInfo) => {
   return (
-    <div className={'flex max-sm:flex-col max-sm:space-y-12 sm:space-x-12'}>
-    <div>
+    <>
       <h1 className={`text-2xl font-semibold text-white/90 transition-colors hover:text-white`}>Accommodation</h1>
       <hr />
+    <div className={'flex max-sm:flex-col max-sm:space-y-12 sm:space-x-12'}>
+    <div>
 
     <div className={'flex flex-col space-y-4 max-w-xl'}>
       <div className={'flex flex-col space-y-4 mt-8'}>
         <Large>Hi <Strong><span className={'capitalize'}>{guests}</span></Strong></Large>
         <Large>We’ve reserved <Strong>{numRooms}</Strong> of the rooms on site for you <Strong>{numGuests}</Strong>.</Large>
-        <Large>You will be in the <Strong>{barn}</Strong>, there is a <Strong>{roomSize}</Strong> for you to rest in after all the food and dancing.</Large>
+        <Large>You will be in the <Strong>{barn}</Strong>, there {numRooms === 'one' ? 'is a' : `are ${numRooms}`} <Strong>{roomSize}</Strong> for you to rest in after all the food and dancing.</Large>
       </div>
 
       <span className={'!my-4'}/>
@@ -120,5 +122,7 @@ const Accomm = ({ guests, numRooms = 'one', numGuests = 'two', barn = 'The Farmh
         <img src={'/images/venue/accomm.png'} alt={'Silchester accommodation'} className={'w-full'} />
       </div>
     </div>
+      <img src={'/images/venue/barn.jpg'} alt={'Silchester accommodation'} className={'w-full !mt-8'} />
+      </>
   )
 }
