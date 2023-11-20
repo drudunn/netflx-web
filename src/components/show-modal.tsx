@@ -155,7 +155,7 @@ const ShowModal = ({ open, setOpen }: ShowModalProps) => {
       open={open}
     >
       <DialogContent className="w-full overflow-hidden rounded-md bg-zinc-900 p-0 text-left align-middle shadow-xl dark:bg-zinc-900 sm:max-w-3xl">
-        <div className="relative aspect-video">
+        <div className="relative aspect-[32/25] sm:aspect-video">
           <div
             className={cn(
               "bg-black/10 bg-gradient-to-b from-neutral-900/10 to-neutral-900",
@@ -163,10 +163,10 @@ const ShowModal = ({ open, setOpen }: ShowModalProps) => {
             )}
           />
           <ReactPlayer
-            style={{ position: "absolute", top: 0, left: 0 }}
+            style={{ position: "absolute", top: 0, left: 0, aspectRatio: "16/9" }}
             url={`https://www.youtube.com/watch?v=${trailer}`}
             width="100%"
-            height="100%"
+            height="auto"
             ref={player}
             muted={isMuted}
             playing={isPlaying}
@@ -279,7 +279,7 @@ const ShowModal = ({ open, setOpen }: ShowModalProps) => {
               </Button>
               <Button onClick={handleClickFullscreen}
                       variant="ghost"
-                      className="h-auto rounded-full bg-neutral-800 p-1.5 opacity-50 ring-1 ring-slate-400 hover:bg-neutral-800 hover:opacity-100 hover:ring-white focus:ring-offset-0 dark:bg-neutral-800 dark:hover:bg-neutral-800">
+                      className="h-auto rounded-full bg-neutral-800 p-1.5 opacity-50 ring-1 ring-slate-400 hover:bg-neutral-800 hover:opacity-100 hover:ring-white focus:ring-offset-0 dark:bg-neutral-800 dark:hover:bg-neutral-800 max-sm:hidden">
                 <Icons.fullScreen className="h-6 w-6" aria-hidden="true" />
               </Button>
           </div>
