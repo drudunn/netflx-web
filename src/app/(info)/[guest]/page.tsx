@@ -89,7 +89,8 @@ const Strong = ({children}: { children: React.ReactNode}) => (
 
 const Accomm = ({ guests, numRooms = 'one', numGuests = 'two', barn = 'The Farmhouse', roomSize = 'double room' }: guestInfo) => {
   return (
-    <>
+    <div className={'flex max-sm:flex-col max-sm:space-y-12 sm:space-x-12'}>
+    <div>
       <h1 className={`text-2xl font-semibold text-white/90 transition-colors hover:text-white`}>Accommodation</h1>
       <hr />
 
@@ -102,17 +103,22 @@ const Accomm = ({ guests, numRooms = 'one', numGuests = 'two', barn = 'The Farmh
 
       <span className={'!my-4'}/>
 
-    <div className={'flex flex-col space-y-4 max-w-xl'}>
-      <P>Each room is £250 but we know it’s a lot, so we’d like to split this cost in half with everyone (£125).</P>
+      <div className={'flex flex-col space-y-4 max-w-xl'}>
+        <P>Each room is £250 but we know it’s a lot, so we’d like to split this cost in half with everyone (£125).</P>
 
-      <P>You’re more than welcome to contribute less or more towards your room, but the most important thing to us is that you are on site with the family for the day. 💖</P>
+        <P>You’re more than welcome to contribute less or more towards your room, but the most important thing to us is that you are on site with the family for the day. 💖</P>
 
-      <P>This is of course up to you, and if you’d prefer to stay somewhere else, please let us know as soon as possible so we can offer the room to another guest.</P>
+        <P>This is of course up to you, and if you’d prefer to stay somewhere else, please let us know as soon as possible so we can offer the room to another guest.</P>
 
-      <P>If you do wish to stay in <Strong>{barn}</Strong>, please confirm with us <Strong>on WhatsApp</Strong>, and send your room contribution <a className={`text-white/70 underline transition-colors hover:text-white`} href={'https://monzo.me/andrudunn?d=Wedding%20Acommodation'}>via this link</a>.
-      </P>
+        <P>If you do wish to stay in <Strong>{barn}</Strong>, please confirm with us <Strong>on WhatsApp</Strong>, and send your room contribution <a className={`text-white/70 underline transition-colors hover:text-white`} href={'https://monzo.me/andrudunn?d=Wedding%20Acommodation'}>via this link</a>.
+        </P>
+      </div>
     </div>
     </div>
-    </>
+
+      <div className={'sm:basis-2/5 md:basis-1/2'}>
+        <img src={'/images/venue/accomm.png'} alt={'Silchester accommodation'} className={'w-full'} />
+      </div>
+    </div>
   )
 }
