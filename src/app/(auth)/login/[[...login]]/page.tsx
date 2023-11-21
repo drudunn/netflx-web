@@ -40,11 +40,16 @@ export default function LoginPage() {
       <section className="container flex min-h-screen w-full max-w-xl flex-col items-center justify-center" suppressHydrationWarning>
         <div className="w-fit rounded-md bg-zinc-800/25 p-14 backdrop-blur-lg">
           <h1 className="mb-8 text-center text-3xl font-bold">Sign in</h1>
-          {!hasInvite ? <LoginButton/> :
-            <>
+          {!hasInvite ? (
+              <>
+                <p className={'mb-4'}}>The invite code in at the bottom of your physical invite</p>
+                <LoginButton/>
+              </>) :
+            (<>
+              <p className={'mb-4'}}>If this is your first visit, you need to sign up using the link below! We'll email a magic link ✨</p>
               <SignUp appearance={appearance}/>
               <SignIn appearance={appearance}/>
-            </>
+            </>)
           }
         </div>
       </section>
