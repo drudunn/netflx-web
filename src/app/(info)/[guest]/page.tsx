@@ -24,6 +24,9 @@ const index: Record<Guest, guestInfo> = {
   'debbie': {
     guests: 'Debbie & Keith'
   },
+  'barbara': {
+    guests: 'Barbara & Charles'
+  },
   'mykel': {
     guests: 'Mykel & Mads'
   },
