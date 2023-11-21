@@ -46,7 +46,7 @@ export default function LoginPage() {
                 <LoginButton/>
               </>) :
             (<>
-              <p className={'mb-4'}>If this is your first visit, you need to sign up using the link below! We'll email a magic link ✨</p>
+              <p className={'mb-4'}>If this is your first visit, you need to sign up using the link below! We will email a magic link ✨</p>
               <SignUp appearance={appearance}/>
               <SignIn appearance={appearance}/>
             </>)
