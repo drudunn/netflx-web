@@ -49,7 +49,7 @@ export default function LoginPage() {
               <p className={'mb-4 p-4 text-white/70'}>If this is your first visit, you need to sign up using the link below!</p>
               <SignUp appearance={appearance}/>
               <SignIn appearance={appearance}/>
-              <p className={'mb-4 p-4 text-white/70'}>We will email you a magic link ✨</p>
+              <p className={'mt-4 p-4 text-white/70'}>We will email you a magic link ✨</p>
             </>)
           }
         </div>
