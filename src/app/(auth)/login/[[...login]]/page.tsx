@@ -42,11 +42,11 @@ export default function LoginPage() {
           <h1 className="mb-8 text-center text-3xl font-bold">Sign in</h1>
           {!hasInvite ? (
               <>
-                <p className={'mb-4'}}>The invite code in at the bottom of your physical invite</p>
+                <p className={'mb-4'}>The invite code in at the bottom of your physical invite</p>
                 <LoginButton/>
               </>) :
             (<>
-              <p className={'mb-4'}}>If this is your first visit, you need to sign up using the link below! We'll email a magic link ✨</p>
+              <p className={'mb-4'}>If this is your first visit, you need to sign up using the link below! We'll email a magic link ✨</p>
               <SignUp appearance={appearance}/>
               <SignIn appearance={appearance}/>
             </>)
