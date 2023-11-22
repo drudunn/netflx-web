@@ -129,7 +129,7 @@ const Accomm = ({ guests, numRooms = 'one', numGuests = 'two', barn = 'The Farmh
       </div>
     </div>
       <img src={'/images/venue/barn.jpg'} alt={'Silchester accommodation'} className={'w-full !mt-8'} />
-      <KeyLinks removeContainer />
+      <KeyLinks addContainer={false} />
       </>
   )
 }
