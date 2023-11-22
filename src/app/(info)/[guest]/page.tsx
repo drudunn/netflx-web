@@ -1,4 +1,5 @@
 import { Link } from '@/components/ui/link';
+import {KeyLinks} from "@/components/rsvp/KeyLinks";
 
 interface guestInfo {
   guests: string,
@@ -126,6 +127,7 @@ const Accomm = ({ guests, numRooms = 'one', numGuests = 'two', barn = 'The Farmh
       </div>
     </div>
       <img src={'/images/venue/barn.jpg'} alt={'Silchester accommodation'} className={'w-full !mt-8'} />
+      <KeyLinks />
       </>
   )
 }

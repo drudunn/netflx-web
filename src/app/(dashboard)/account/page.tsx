@@ -4,6 +4,7 @@ import { FormEvent, Fragment, useContext, useEffect, useState } from 'react'
 
 import { useUser } from '@clerk/nextjs';
 import { RSVPContext } from '@/components/RSVPContext';
+import {KeyLinks} from "@/components/rsvp/KeyLinks";
 
 type PublicProfile = 'attending' |  'guests' |  'note' |  'dietary' |  'song'
 
@@ -116,6 +117,7 @@ export default function AccountPage() {
           {submitting ? 'Updating' : 'Save'}
         </button>
       </form>
+      <KeyLinks rsvp={false} />
     </div>
   )
 }
