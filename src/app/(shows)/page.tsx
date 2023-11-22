@@ -17,7 +17,7 @@ export default async function Home() {
   const favorites = shows.slice(0, 6)
   const topPicks = shows.slice(6)
 
-  const allShows = [...shows, ...highlights] as unknown as Show[]
+  const allShows = [...shows, ...highlights, ...trendingShows] as unknown as Show[]
 
   const allShowsByCategory: CategorizedShows[] = [
     {
