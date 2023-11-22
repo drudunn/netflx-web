@@ -105,6 +105,8 @@ const Accomm = ({ guests, numRooms = 'one', numGuests = 'two', barn = 'The Farmh
         <Large>Hi <Strong><span className={'capitalize'}>{guests}</span></Strong></Large>
         <Large>We’ve reserved <Strong>{numRooms}</Strong> of the rooms on site for you <Strong>{numGuests}</Strong>.</Large>
         <Large>You will be in the <Strong>{barn}</Strong>, there {numRooms === 'one' ? 'is a' : `are ${numRooms}`} <Strong>{roomSize}</Strong> for you to rest in after all the food and dancing.</Large>
+        <Large>Breakfast is included and will be delivered to the barn in the morning.</Large>
+        <Large>Check in is 2pm, so to be done at some point after the ceremony. Check out is at 10am.</Large>
       </div>
 
       <span className={'!my-4'}/>
