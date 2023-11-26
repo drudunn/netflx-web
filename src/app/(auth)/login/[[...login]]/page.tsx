@@ -29,7 +29,7 @@ export default function LoginPage() {
   const { isSignedIn, user, isLoaded } = useUser();
   const [cookies, setCookie] = useCookies(['token']);
   const searchParams = useSearchParams()
-  const tokenParam = searchParams.get('token')
+  const tokenParam = searchParams?.get('token')
   const hasInvite = tokenParam || cookies.token === 'allowed'
 
   if (user) {
