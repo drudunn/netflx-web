@@ -7,6 +7,7 @@ import styles from './login.module.css'
 import LoginButton from '@/components/login-button'
 import { SignUpTheme } from '@clerk/types';
 import { CookiesProvider, useCookies } from 'react-cookie';
+import { useEffect } from 'react';
 
 const metadata: Metadata = {
   title: 'Login',
@@ -36,6 +37,12 @@ export default function LoginPage() {
     // find user in db by id
     redirect('/')
   }
+
+  useEffect(() => {
+    if (tokenParam) {
+      setCookie('token', 'allowed', { path: '/' })
+    }
+  }, [tokenParam])
 
   return (
     <CookiesProvider>
