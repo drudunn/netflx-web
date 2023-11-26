@@ -1,7 +1,7 @@
 'use client'
 
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
+import { redirect, useSearchParams } from 'next/navigation'
 import { SignIn, SignUp, useUser } from '@clerk/nextjs';
 import styles from './login.module.css'
 import LoginButton from '@/components/login-button'
@@ -28,7 +28,9 @@ const appearance: SignUpTheme = {
 export default function LoginPage() {
   const { isSignedIn, user, isLoaded } = useUser();
   const [cookies, setCookie] = useCookies(['token']);
-  const hasInvite = cookies.token === 'allowed'
+  const searchParams = useSearchParams()
+  const tokenParam = searchParams.get('token')
+  const hasInvite = tokenParam || cookies.token === 'allowed'
 
   if (user) {
     // find user in db by id
