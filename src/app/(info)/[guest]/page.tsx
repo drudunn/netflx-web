@@ -58,6 +58,11 @@ const index: Record<Guest, guestInfo> = {
     guests: 'Ryan & Claire',
     barn: 'The Barnhouse'
   },
+  jameson: {
+    guests: 'Jameson',
+    barn: 'The Barnhouse',
+    numGuests: 'one',
+  },
   'bee': {
     guests: 'Bee & Marcus',
     barn: 'The Barnhouse'
@@ -103,7 +108,7 @@ const Accomm = ({ guests, numRooms = 'one', numGuests = 'two', barn = 'The Farmh
     <div className={'flex flex-col space-y-4 max-w-xl'}>
       <div className={'flex flex-col space-y-4 mt-8'}>
         <Large>Hi <Strong><span className={'capitalize'}>{guests}</span></Strong></Large>
-        <Large>We’ve reserved <Strong>{numRooms}</Strong> of the rooms on site for you <Strong>{numGuests}</Strong>.</Large>
+        <Large>We’ve reserved <Strong>{numRooms}</Strong> of the rooms on site for {numGuests === 'one' ? <><Strong>you</Strong></> : <>you <Strong>{numGuests}</Strong></>}.</Large>
         <Large>You will be in the <Strong>{barn}</Strong>, there {numRooms === 'one' ? 'is a' : `are ${numRooms}`} <Strong>{roomSize}</Strong> for you to rest in after all the food and dancing.</Large>
         <Large>Breakfast is included and will be delivered to the barn in the morning.</Large>
         <Large>Check in is 2pm, so to be done at some point after the ceremony. Check out is at 10am.</Large>
