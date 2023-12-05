@@ -27,6 +27,15 @@ const config = {
     appDir: true,
     serverComponentsExternalPackages: ["@prisma/client"],
   },
+  async redirects() {
+    return [
+      {
+        source: '/rsvp',
+        destination: '/account',
+        permanent: true,
+      },
+    ]
+  },
 
   // i18n: {
   //   locales: ["en"],
