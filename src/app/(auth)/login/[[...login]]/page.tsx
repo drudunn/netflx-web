@@ -8,7 +8,7 @@ import LoginButton from '@/components/login-button'
 import { SignUpTheme } from '@clerk/types';
 import { CookiesProvider, useCookies } from 'react-cookie';
 import { useEffect } from 'react';
-import { guests } from '@/app/(info)/[guest]/page';
+import { guests } from '@/utils/guests';
 
 const metadata: Metadata = {
   title: 'Login',
