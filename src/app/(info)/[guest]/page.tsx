@@ -11,7 +11,7 @@ interface guestInfo {
 
 type Guest = string
 
-const index: Record<Guest, guestInfo> = {
+export const guests: Record<Guest, guestInfo> = {
   'sarah': {
     guests: 'Sarah & Sam',
   },
@@ -70,7 +70,7 @@ const index: Record<Guest, guestInfo> = {
 }
 
 export default function Page ({ params: { guest } }: { params: { guest: string } }) {
-  const guestInfo = index[guest]
+  const guestInfo = guests[guest]
   const isGuest = !!guestInfo?.guests
 
   return (isGuest ? (

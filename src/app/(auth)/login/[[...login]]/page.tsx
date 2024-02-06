@@ -8,6 +8,7 @@ import LoginButton from '@/components/login-button'
 import { SignUpTheme } from '@clerk/types';
 import { CookiesProvider, useCookies } from 'react-cookie';
 import { useEffect } from 'react';
+import { guests } from '@/app/(info)/[guest]/page';
 
 const metadata: Metadata = {
   title: 'Login',
@@ -31,7 +32,9 @@ export default function LoginPage() {
   const [cookies, setCookie] = useCookies(['token']);
   const searchParams = useSearchParams()
   const tokenParam = searchParams?.get('token')
-  const hasInvite = tokenParam || cookies.token === 'allowed'
+  const redirect_url = searchParams.get('redirect_url')
+  const isAcommUrl = Object.keys(guests).map(guest => redirect_url?.includes(guest)).includes(true)
+  const hasInvite = tokenParam || cookies.token === 'allowed' || isAcommUrl
 
   if (user) {
     // find user in db by id
