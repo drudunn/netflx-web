@@ -32,7 +32,7 @@ export default function LoginPage() {
   const [cookies, setCookie] = useCookies(['token']);
   const searchParams = useSearchParams()
   const tokenParam = searchParams?.get('token')
-  const redirect_url = searchParams.get('redirect_url')
+  const redirect_url = searchParams?.get('redirect_url')
   const isAcommUrl = Object.keys(guests).map(guest => redirect_url?.includes(guest)).includes(true)
   const hasInvite = tokenParam || cookies.token === 'allowed' || isAcommUrl
 
