@@ -48,7 +48,8 @@ export const guests: Record<Guest, guestInfo> = {
   },
   'joe': {
     guests: 'Joe',
-    barn: 'The Barnhouse'
+    barn: 'The Barnhouse',
+    numGuests: 'one',
   },
   'ryan': {
     guests: 'Ryan & Claire',
