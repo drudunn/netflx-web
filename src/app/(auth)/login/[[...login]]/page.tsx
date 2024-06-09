@@ -34,7 +34,7 @@ export default function LoginPage() {
   const tokenParam = searchParams?.get('token')
   const redirect_url = searchParams?.get('redirect_url')
   const isAcommUrl = Object.keys(guests).map(guest => redirect_url?.includes(guest)).includes(true)
-  const hasInvite = tokenParam || cookies.token === 'allowed' || isAcommUrl
+  const hasInvite = true || tokenParam || cookies.token === 'allowed' || isAcommUrl
 
   if (user) {
     // find user in db by id
