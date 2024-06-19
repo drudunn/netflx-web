@@ -28,7 +28,7 @@ export function MainNav({ items }: MainNavProps) {
   const { isSignedIn, user, isLoaded } = useUser();
   const hasUser = user && isSignedIn && isLoaded;
 
-  const links = hasUser ? items : [{ title: "Home", href: "/"}]
+  const links = items;
 
   // search store
   const searchStore = useSearchStore()

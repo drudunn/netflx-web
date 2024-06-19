@@ -39,7 +39,8 @@ const SiteHeader = ({ session }: SiteHeaderProps) => {
   const mounted = useMounted()
   const [isScrolled, setIsScrolled] = React.useState(false)
 
-  const { isSignedIn, user, isLoaded } = useUser();
+  // const { isSignedIn, user, isLoaded } = useUser();
+  const user = true;
 
   // change background color on scroll
   React.useEffect(() => {
