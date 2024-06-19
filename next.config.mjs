@@ -34,6 +34,11 @@ const config = {
         destination: '/account',
         permanent: true,
       },
+      {
+        source: '/floorplan',
+        destination: 'https://tinyurl.com/adcm-rooms',
+        permanent: true,
+      },
     ]
   },
 
