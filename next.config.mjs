@@ -39,6 +39,11 @@ const config = {
         destination: 'https://tinyurl.com/adcm-rooms',
         permanent: true,
       },
+      {
+        source: '/timings',
+        destination: 'https://docs.google.com/document/d/1xjZgokqB2lg4ajjHC6UH8Vxa4l7Iu5vmp_P4vu7N67I/edit?usp=sharing',
+        permanent: true,
+      },
     ]
   },
 
