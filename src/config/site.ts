@@ -43,11 +43,11 @@ export const siteConfig: SiteConfig = {
       href: "/faqs",
       icon: Icons.info,
     },
-    // {
-    //   title: "Gifts",
-    //   href: "/gifts",
-    //   icon: Icons.trendingUp,
-    // },
+    {
+      title: "Music",
+      href: "/music",
+      icon: Icons.trendingUp,
+    },
     {
       title: "Notifications",
       onClick: () => alert("🛹 Do a kickflip"),
